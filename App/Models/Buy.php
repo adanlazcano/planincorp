@@ -67,8 +67,6 @@ class Buy{
 
             $sqlDetail="INSERT INTO detalle_compra (idCompra,idProducto,cantidad,precio,importe) VALUES ".implode(',',$valueDetails)."";
 
-           
-
             $sqlStock="UPDATE stock SET cantidad = (CASE idProducto ".implode(' ',$valueStock)." END) WHERE idProducto IN(".implode(',',$valueId).")";
            
             DB::query($sqlDetail);
@@ -119,14 +117,11 @@ class Buy{
            
             $sqlBuy = "UPDATE compra SET unidades=$totalProd, total=$allTotal, updatedAt = CURRENT_TIMESTAMP WHERE idCompra=$idCompra";
 
-            
             $sqlDetail="UPDATE detalle_compra SET cantidad=$unit, importe=$total WHERE idDetalleCompra=$id";
-            
-            
+                        
             $minStock = $stock - 1;
             
             $sqlStock="UPDATE stock SET cantidad=$minStock WHERE idStock=$idStock";
-            
             
             DB::query($sqlBuy);
             DB::query($sqlDetail);
