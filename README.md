@@ -1,6 +1,5 @@
-## Resume Generator
+## Sistema de compras
 
-Sistema de compras
 Desarrollado en Javascript, PHP MVC para la empresa de outsourcing PLANINCORP en Guadalajara, Jalisco. 
 Este sistema te permite dar de alta personal, áreas, proveedores, categorías, productos y compras; 
 también descargar los formatos de compras en PDF y el inventario exportarlo a EXCEL.
