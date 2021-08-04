@@ -1,4 +1,3 @@
-
 <?php
 $config=array(
 'DB_HOST'=>'localhost',
