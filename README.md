@@ -8,7 +8,7 @@ también descargar los formatos de compras en PDF y el inventario exportarlo a E
 
 ## Purchasing System
 
-Purchasing system for the PLANINCORP outsourcing company located in the city of Guadalajara, Jalisco. 
+Purchasing system for the PLANINCORP outsourcing company located in Guadalajara city, Jalisco. 
 I developed it in Javascript, PHP MVC. This system allows you to register staff, areas, suppliers, categories, products and purchases, 
 as well as download the purchase formats in PDF and export the inventory to EXCEL.
 
