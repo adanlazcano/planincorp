@@ -1,0 +1,369 @@
+@import './handlers/renameBoot';
+.home-container {
+    &-one {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+        grid-gap: 2rem;
+        h5 {
+            color: $clr-nav;
+        }
+        #homeTotalBuy {
+            margin-top: 15px;
+            color: $clr-nav-item-hover;
+        }
+        #homeTotalProv,
+        #homeTotalProd {
+            margin-top: 15px;
+            text-align: right;
+            color: $clr-nav-item-hover;
+        }
+    }
+    &-two {
+        margin-top: 21px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(26rem, 1fr));
+        grid-gap: 2rem;
+        @media(max-width: $width-resp-one) {
+            grid-template-columns: 1fr;
+        }
+        h6 {
+            color: $clr-nav;
+            i {
+                font-size: 12px;
+            }
+        }
+        ul {
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 6px;
+                color: $clr-nav-item-hover;
+                span:nth-child(2) {
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
+
+.header-card {
+    display: flex;
+    justify-content: space-between;
+    h3 {
+        @media(max-width: $width-resp-one) {
+            font-size: 26px;
+        }
+    }
+    button {
+        @media(max-width: $width-resp-one) {
+            font-size: 12px;
+        }
+    }
+}
+
+.updateIcon {
+    color: $clr-nav-item-hover;
+    cursor: pointer;
+}
+
+.deliveryIcon {
+    color: orange;
+    cursor: pointer;
+}
+
+.downloadIcon {
+    color: $clr-nav;
+    cursor: pointer;
+}
+
+.deleteIcon {
+    color: $clr-delete;
+    cursor: pointer;
+}
+
+.buyList {
+    display: none!important;
+}
+
+.buyNewProv,
+.buyNewProd {
+    color: $clr-blue;
+    margin-left: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+    @media(max-width: $width-resp-one) {
+        font-size: 11px;
+    }
+}
+
+.buyContainerGral {
+    background-color: #F8F8F7;
+    border: 1px solid $clr-border;
+    padding: 20px 12px;
+    border-radius: 6px;
+}
+
+.modalBuyNewProv {
+    opacity: 0;
+    position: absolute;
+    background-color: $clr-light;
+    width: 89%;
+    box-shadow: 1px 8px 4px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    top: -17px;
+    left: 11.4rem;
+    z-index: 2;
+    transition: 0.3s ease-in-out;
+    &::before {
+        content: '';
+        position: absolute;
+        background-color: $clr-light;
+        transform: rotate(45deg) translateY(-50%);
+        top: 50%;
+        left: -13px;
+        width: 15px;
+        height: 15px;
+        border-radius: 2px;
+    }
+    @media(max-width: $width-resp-one) {
+        left: 9rem;
+        width: 69%;
+        top: -22px;
+    }
+    @media(max-width: $width-resp-two) {
+        width: 56%;
+    }
+}
+
+.buyContainerBuy {
+    border: 1px solid $clr-border;
+    border-radius: 6px;
+    padding: 20px 12px;
+    margin-top: 25px;
+}
+
+.modalBuyNewProd {
+    background-color: $clr-light;
+    display: none;
+    box-shadow: 1px 8px 4px rgba(0, 0, 0, 0.15);
+    border: 1px solid $clr-border;
+    padding: 12px 0 0 0px;
+    border-radius: 2px;
+    &Content {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.sectionBuyTable {
+    width: 100%;
+    overflow: auto;
+    margin-top: 20px;
+    .buysTable {
+        // border-spacing: 0;
+        background: var(--color-white);
+        padding: 20px;
+        thead {
+            th:nth-child(2) {
+                text-align: center;
+            }
+            th:nth-child(3),
+            th:nth-child(4) {
+                text-align: right;
+            }
+        }
+        tbody {
+            td:nth-child(2) {
+                text-align: center;
+            }
+            td:nth-child(3),
+            td:nth-child(4) {
+                text-align: right;
+            }
+        }
+        #tableBuyFooter {
+            display: none;
+            tr,
+            th {
+                text-align: right;
+            }
+            td {
+                text-align: center;
+                &:last-child {
+                    text-align: right;
+                }
+            }
+            #buyFooterTotal,
+            #buyFooterTotalProducts {
+                font-size: 17px;
+                @media(max-width: $width-resp-one) {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}
+
+.btn-buy-add,
+.btn-buy-substract {
+    outline: none;
+    border: none;
+    background-color: $clr-nav-item-hover;
+    color: $clr-light;
+    padding: 2px 8px;
+    border-radius: 2px;
+    transition: 0.3s ease-in-out;
+    &:hover {
+        filter: brightness(120%);
+    }
+    @media(max-width: $width-resp-one) {
+        padding: 0;
+        background-color: transparent;
+        color: $clr-nav-item-hover;
+        font-weight: 800;
+        font-size: 13px;
+    }
+}
+
+.btnEmptyProducts {
+    background-color: #DC3545;
+    color: $clr-light;
+    padding: 2px 10px;
+    border-radius: 4px;
+    outline: none;
+    border: none;
+    transition: 0.3s ease-in-out;
+    &:hover {
+        background-color: $clr-nav-item-hover;
+    }
+}
+
+.modalBodyDetails {
+    color: $clr-nav;
+    font-size: 15px;
+    i {
+        color: rgba(0, 0, 0, 0.6);
+    }
+    .buyDetailsTable {
+        width: 100%;
+        overflow: auto;
+        margin: 35px 0 15px 0;
+        thead {
+            color: $clr-nav;
+            font-size: 15px;
+            th:nth-child(2) {
+                text-align: center;
+            }
+            th:nth-child(3),
+            th:nth-child(4) {
+                text-align: right;
+            }
+        }
+        .buyDetailsUnit {
+            text-align: center;
+        }
+        .buyDetailsPrice,
+        .buyDetailsTotal {
+            text-align: right;
+        }
+    }
+    .buyDetailsH5Total {
+        width: 100%;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+        padding: 5px 0;
+    }
+    .buyDetailsModalFooter {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 700;
+        font-size: 19px;
+        margin-top: 15px;
+        color: $clr-nav;
+        #buyDetailsTotalProducts {
+            span {
+                font-size: 13px;
+                color: rgba(0, 0, 0, 0.6);
+            }
+        }
+    }
+}
+
+.templateBuyPdf {
+    // font-family: 'Poppins', sans-serif;
+    width: 100%;
+    display: none;
+    &Header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: $clr-nav;
+    }
+    &Grales {
+        display: flex;
+        font-size: 13px;
+        flex: 1;
+        justify-content: flex-start;
+        margin-top: 20px;
+        li {
+            margin-top: 5px;
+            span {
+                font-weight: bold;
+                font-weight: 500;
+            }
+        }
+    }
+    &Table {
+        margin: 15px 0;
+        thead {
+            color: $clr-nav;
+            font-size: 14px;
+            th:nth-child(2) {
+                text-align: center;
+            }
+            th:nth-child(3),
+            th:nth-child(4) {
+                text-align: right;
+            }
+        }
+        .buyDetailsUnit {
+            text-align: center;
+        }
+        .buyDetailsPrice,
+        .buyDetailsTotal {
+            text-align: right;
+        }
+    }
+    &Footer {
+        text-align: right;
+        margin-top: 40px;
+        #buyDetailsTotalProductsPdf,
+        #buyDetailsAllTotalPdf {
+            font-weight: bolder;
+            font-size: 20px;
+        }
+        #buyDetailsTotalProductsPdf {
+            span {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+#buyTotalProductsMin {
+    font-size: 20px;
+    span {
+        font-size: 13px;
+    }
+}
+
+#buyAllTotalMin {
+    font-size: 20px;
+}
+
+.buyDeleteProduct {
+    color: $clr-delete;
+    cursor: pointer;
+}

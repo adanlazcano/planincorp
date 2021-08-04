@@ -1,0 +1,31 @@
+@import 'vars';
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: $clr-nav;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background: $clr-bg-inp;
+}
+
+a {
+    text-decoration: none!important;
+    color: $clr-light;
+}
+
+ul {
+    list-style: none;
+}

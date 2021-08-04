@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import './handlers/config';
+@import './handlers/responsive';
+body {
+    font-family: -apple-system, BlinkMacSystemFont, segoe ui, roboto, helvetica neue, Arial, sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol;
+    overflow-x: hidden;
+    background-color: $clr-bg-inp;
+    font-size: 14px;
+    line-height: 1.42857;
+}
+
+.container {
+    position: relative;
+    width: 100%!important;
+    margin: 0!important;
+    @import './handlers/header';
+    @import './handlers/navigation';
+    .main {
+        position: absolute;
+        padding: 100px 2rem 60px 2rem !important;
+        margin: 0!important;
+        left: 60px!important;
+        width: calc(100vw - 60px);
+        transition: 0.5s;
+    }
+    @import './handlers/footer';
+    @include main();
+}

@@ -1,0 +1,23 @@
+@import 'responsive';
+footer {
+    position: fixed;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    left: 60px;
+    height: 40px;
+    bottom: 0;
+    width: calc(100vw - 60px);
+    background: $clr-light;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    transition: 0.5s;
+    z-index: 1;
+    small {
+        position: absolute;
+        left: 2rem;
+        font-size: 0.8rem;
+        color: $clr-gray-one;
+    }
+}
+
+@include footer();

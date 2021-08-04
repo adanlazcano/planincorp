@@ -1,0 +1,149 @@
+@import 'vars';
+table {
+    font-size: 14px;
+    thead {
+        th {
+            font-weight: 500;
+            &[data-field="prodPrecio"],
+            &[data-field="buyTotal"] {
+                text-align: left!important;
+            }
+        }
+    }
+    tbody {
+        td {
+            color: $clr-gray-four;
+        }
+    }
+    @media (max-width: $width-resp-one) {
+        font-size: 12px;
+    }
+}
+
+.dropdown-toggle {
+    font-size: 10px;
+    background-color: $clr-nav;
+    border: none;
+    &:hover {
+        background-color: $clr-nav-item-hover;
+    }
+    @media (max-width: $width-resp-one) {
+        font-size: 7px;
+    }
+}
+
+.search-input {
+    @media (max-width: $width-resp-one) {
+        font-size: 12px;
+    }
+}
+
+.fixed-table-pagination {
+    font-size: 12px;
+    @media (max-width: $width-resp-one) {
+        & {
+            font-size: 10px;
+        }
+    }
+}
+
+.alertPlanincorp,
+.alertModalPlanincorp {
+    display: none;
+    color: $clr-light;
+    font-weight: 400;
+    @media (max-width: $width-resp-one) {
+        font-size: 12px;
+    }
+    &.show {
+        display: block;
+    }
+}
+
+.card-primary.card-outline {
+    border-top: 3px solid $clr-nav;
+    padding: 20px;
+}
+
+.customModal {
+    label {
+        font-weight: 400!important;
+    }
+    .modal-body {
+        padding: 20px;
+    }
+    .btnModal {
+        background-color: $clr-nav;
+        border: none;
+        font-weight: 300;
+        &:hover {
+            background-color: $clr-nav-item-hover;
+        }
+    }
+    input,
+    select {
+        font-weight: 300!important;
+    }
+    select:invalid,
+    select option[value=""] {
+        color: #999;
+    }
+    .modalMessage {
+        font-size: 15px!important;
+    }
+    @media (max-width: $width-resp-one) {
+        font-size: 12px;
+        input,
+        select {
+            font-size: 12px;
+        }
+        .modal-title {
+            font-size: 16px;
+        }
+        .btnModal {
+            font-size: 12px;
+        }
+        .modalMessage {
+            font-size: 13px!important;
+        }
+    }
+}
+
+.badge {
+    font-weight: 500;
+    padding: 5px;
+    color: $clr-bg;
+}
+
+.select2-container .select2-selection--single {
+    height: 38px;
+    border-color: #CED4DA;
+    font-weight: 300;
+    padding-left: 6px;
+    @media (max-width: $width-resp-one) {
+        font-size: 12px!important;
+    }
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    top: 6px;
+}
+
+.select2-results__options {
+    font-size: 14px!important;
+    font-weight: 300;
+    @media (max-width: $width-resp-one) {
+        font-size: 12px!important;
+    }
+}
+
+.select2-dropdown .select2-dropdown--below {
+    width: 100%!important;
+    z-index: 9998!important;
+    @media (max-width: $width-resp-one) {
+        width: 100%!important;
+    }
+    @media (max-width: $width-resp-two) {
+        width: 80%!important;
+    }
+}

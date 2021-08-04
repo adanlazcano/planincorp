@@ -1,0 +1,97 @@
+@import 'responsive';
+header {
+    position: fixed;
+    z-index: 1;
+    width: calc(100% - 60px)!important;
+    left: 60px;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 2rem;
+    height: 60px;
+    gap: 3rem;
+    background: $clr-light;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+    transition: 0.5s;
+    .fa-bars {
+        position: absolute;
+        left: 2rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: $clr-gray-one;
+    }
+    .profile {
+        width: 40px;
+        height: 40px;
+        border-radius: 40px;
+        object-fit: cover;
+        transition: 0.5s ease-in-out;
+        filter: grayscale(100%);
+        cursor: pointer;
+        &:hover {
+            filter: grayscale(0%);
+        }
+        // &:hover~.menu {
+        //     visibility: visible;
+        //     opacity: 1;
+        // }
+        &.active~.menu {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    .menu {
+        position: absolute;
+        top: 75px;
+        right: 1.5rem;
+        padding: 10px 20px;
+        background: $clr-light;
+        width: 200px;
+        box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        transition: 0.5s;
+        visibility: hidden;
+        opacity: 0;
+        font-size: 0.8rem;
+        a {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            display: block;
+            color: $clr-gray-two;
+            opacity: 0.5;
+            font-weight: 500;
+            transition: 0.5s;
+            i {
+                max-width: 20px;
+                margin-right: 10px;
+            }
+            &:hover {
+                opacity: 1;
+                color: $clr-nav;
+            }
+            &.menu-signout:hover {
+                opacity: 1;
+                color: $clr-delete;
+            }
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: -7.5px;
+            right: 22px;
+            width: 14px;
+            height: 14px;
+            background: $clr-light;
+            transform: rotate(45deg);
+        }
+        // &:hover {
+        //     visibility: visible;
+        //     opacity: 1;
+        // }
+    }
+}
+
+@include header();
